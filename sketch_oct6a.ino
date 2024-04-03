@@ -11,7 +11,7 @@ const char *pass = "Isi nama pw kalian";
 const char *server = "api.thingspeak.com";
 WiFiClient client;
 unsigned long myChannelNumber = 2271678;
-const char *myWriteAPIKey = "HQCULFH0FE0BMFJ7";
+const char *myWriteAPIKey = "Isi dengan api kalian";
 
 #define DHTPIN D2
 #define DHTTYPE DHT22
