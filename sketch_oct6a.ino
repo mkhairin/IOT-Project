@@ -5,9 +5,9 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-String apikey = "HQCULFH0FE0BMFJ7";
-const char *ssid = "OPPO A5S";
-const char *pass = "12345678";
+String apikey = "Isi dengan api kalian";
+const char *ssid = "Isi nama ssid kalian";
+const char *pass = "Isi nama pw kalian";
 const char *server = "api.thingspeak.com";
 WiFiClient client;
 unsigned long myChannelNumber = 2271678;
