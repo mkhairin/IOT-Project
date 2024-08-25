@@ -27,12 +27,30 @@ Sebelum Anda dapat menjalankan proyek ini, pastikan Anda memiliki hal-hal beriku
      - `LiquidCrystal I2C`
      - `ThingSpeak`
 
-4. **Hubungkan Perangkat Keras**:
+4. **Tambahkan Board ESP8266 ke Arduino IDE**:
+   - Buka `File > Preferences`.
+   - Pada kolom "Additional Board Manager URLs", tambahkan URL berikut: `http://arduino.esp8266.com/stable/package_esp8266com_index.json`.
+   - Buka `Tools > Board > Board Manager`, cari "esp8266" dan instal paket yang ditemukan.
+
+5. **Hubungkan Perangkat Keras**:
    - **Sensor DHT22**: Hubungkan sensor DHT22 ke ESP8266 (pin D2).
    - **Layar LCD**: Hubungkan layar I2C LCD ke ESP8266.
 
-5. **Konfigurasi WiFi dan ThingSpeak**:
-   - Dalam file `.ino`, ubah variabel berikut dengan kredensial Anda:
+## Pendaftaran dan Konfigurasi ThingSpeak
+
+1. **Daftar di ThingSpeak**:
+   - Buka situs [ThingSpeak](https://thingspeak.com) dan buat akun baru atau masuk jika Anda sudah memiliki akun.
+
+2. **Buat Channel Baru**:
+   - Setelah masuk, klik "Channels" di navigasi dan pilih "New Channel".
+   - Isi nama channel, deskripsi, dan tambahkan dua field: `Temperature` dan `Humidity`.
+   - Simpan perubahan dengan mengklik tombol "Save Channel".
+
+3. **Catat API Key dan Channel ID**:
+   - Setelah channel dibuat, catat `Channel ID` dan `Write API Key` dari tab API Keys di halaman channel.
+
+4. **Konfigurasi Proyek**:
+   - Buka file `.ino` dan ubah variabel berikut dengan kredensial WiFi Anda dan informasi dari ThingSpeak:
      ```cpp
      const char *ssid = "Your_SSID";        // Nama jaringan WiFi Anda
      const char *pass = "Your_PASSWORD";    // Kata sandi WiFi Anda
@@ -40,10 +58,17 @@ Sebelum Anda dapat menjalankan proyek ini, pastikan Anda memiliki hal-hal beriku
      const char *myWriteAPIKey = "YOUR_API_KEY"; // Kunci API Write ThingSpeak Anda
      ```
 
-6. **Unggah Kode**:
-   - Hubungkan ESP8266 Anda ke komputer.
-   - Pilih board dan port yang benar di Arduino IDE.
-   - Klik tombol "Upload" untuk mengunggah kode ke ESP8266 Anda.
+## Unggah Kode
+
+1. **Hubungkan ESP8266 ke Komputer**:
+   - Sambungkan mikrokontroler ESP8266 Anda ke komputer menggunakan kabel USB.
+
+2. **Pilih Board dan Port**:
+   - Di Arduino IDE, buka `Tools > Board` dan pilih `NodeMCU 1.0 (ESP-12E Module)` atau board ESP8266 yang sesuai.
+   - Buka `Tools > Port` dan pilih port yang sesuai dengan ESP8266 Anda.
+
+3. **Unggah Kode**:
+   - Klik tombol "Upload" di Arduino IDE untuk mengunggah kode ke ESP8266 Anda.
 
 ## Penggunaan
 
